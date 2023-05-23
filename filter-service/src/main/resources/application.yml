@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      database: t2-filterdb
+      uri: mongodb://localhost:27017
