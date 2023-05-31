@@ -1,6 +1,6 @@
 package com.kodlamaio.inventoryservice.business.concretes;
 
-import com.kodlamaio.commonpackage.events.BrandDeletedEvent;
+import com.kodlamaio.commonpackage.events.inventory.BrandDeletedEvent;
 import com.kodlamaio.commonpackage.utils.mappers.ModelMapperService;
 import com.kodlamaio.inventoryservice.business.abstracts.BrandService;
 import com.kodlamaio.inventoryservice.business.dto.requests.create.CreateBrandRequest;
@@ -9,7 +9,7 @@ import com.kodlamaio.inventoryservice.business.dto.responses.create.CreateBrandR
 import com.kodlamaio.inventoryservice.business.dto.responses.get.brand.GetAllBrandsResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.get.brand.GetBrandResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateBrandResponse;
-import com.kodlamaio.inventoryservice.business.kafka.InventoryProducer;
+import com.kodlamaio.inventoryservice.business.kafka.producer.InventoryProducer;
 import com.kodlamaio.inventoryservice.business.rules.BrandBusinessRules;
 import com.kodlamaio.inventoryservice.entities.Brand;
 import com.kodlamaio.inventoryservice.repository.BrandRepository;

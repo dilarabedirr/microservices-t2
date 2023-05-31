@@ -17,19 +17,13 @@ import java.util.UUID;
 public class FiltersController {
     private final FilterService service;
 
-    // veritabanı oluşsun diye yazdık oluşturduktan sonra kaldırdık.
-//    @PostConstruct
-//    public void createDb() {
-//        service.add(new Filter());
-//    }
-
     @GetMapping
     public List<GetAllFiltersResponse> getAll() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public GetFilterResponse getById(@PathVariable UUID id) {
+    public GetFilterResponse getById(@PathVariable String id) {
         return service.getById(id);
     }
 }

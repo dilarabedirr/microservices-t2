@@ -6,18 +6,17 @@ import com.kodlamaio.inventoryservice.business.dto.responses.create.CreateCarRes
 import com.kodlamaio.inventoryservice.business.dto.responses.get.car.GetAllCarsResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.get.car.GetCarResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateCarResponse;
+import com.kodlamaio.inventoryservice.entities.enums.State;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface CarService {
     List<GetAllCarsResponse> getAll();
-
     GetCarResponse getById(UUID id);
-
     CreateCarResponse add(CreateCarRequest request);
-
     UpdateCarResponse update(UUID id, UpdateCarRequest request);
-
     void delete(UUID id);
+    void checkIfCarAvailable(UUID id);
+    void changeStateByCarId(State state,UUID id);
 }
