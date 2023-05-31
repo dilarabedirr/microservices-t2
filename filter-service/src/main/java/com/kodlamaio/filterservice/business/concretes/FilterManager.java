@@ -7,7 +7,6 @@ import com.kodlamaio.filterservice.business.dto.responses.GetFilterResponse;
 import com.kodlamaio.filterservice.entities.Filter;
 import com.kodlamaio.filterservice.repository.FilterRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +14,6 @@ import java.util.UUID;
 
 @Service
 @AllArgsConstructor
-// @RequiredArgsConstructor -> final keywordunun olduğu alanları çalıştırır.
 public class FilterManager implements FilterService {
     private final FilterRepository repository;
     private ModelMapperService mapper;
@@ -47,8 +45,13 @@ public class FilterManager implements FilterService {
     }
 
     @Override
-    public void deleteAllByBrandId(UUID brandId) {
+    public void deleteByCarId(UUID carId) {
+        repository.deleteByCarId(carId);
+    }
 
+    @Override
+    public void deleteAllByBrandId(UUID brandId) {
+        repository.deleteAllByBrandId(brandId);
     }
 
     @Override
