@@ -26,12 +26,6 @@ public class MaintenanceBusinessRules {
         }
     }
 
-    public void checkIfCarUnderMaintenance(UUID carId) {
-        if (repository.existsByCarIdAndIsCompletedIsFalse(carId)) {
-            throw new BusinessException("CAR_IS_UNDER_MAINTENANCE");
-        }
-    }
-
     public void ensureCarIsAvailable(UUID carId) {
         var response = carClient.checkIfCarAvailable(carId);
         if (!response.isSuccess()){

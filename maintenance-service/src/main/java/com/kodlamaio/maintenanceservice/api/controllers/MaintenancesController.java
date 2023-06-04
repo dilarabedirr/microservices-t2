@@ -38,7 +38,7 @@ public class MaintenancesController {
     }
 
     @PutMapping("/{id}")
-    public UpdateMaintenanceResponse update(@PathVariable UUID id, UpdateMaintenanceRequest request) {
+    public UpdateMaintenanceResponse update(@PathVariable UUID id, @RequestBody UpdateMaintenanceRequest request) {
         return service.update(id, request);
     }
 

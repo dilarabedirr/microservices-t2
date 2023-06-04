@@ -44,6 +44,7 @@ public class MaintenanceConsumer {
     public void consume(MaintenanceDeletedEvent event) {
         var filter = service.getByCarId(event.getCarId());
         filter.setState("Available");
+        service.add(filter);
         log.info("Maintenance deleted event consumed {}", event);
     }
 }
