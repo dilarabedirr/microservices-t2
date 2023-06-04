@@ -49,10 +49,9 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public CreateMaintenanceResponse add(CreateMaintenanceRequest request) {
-        //rules.checkIfCarUnderMaintenance(request.getCarId());
         rules.ensureCarIsAvailable(request.getCarId());
         var maintenance = mapper.forRequest().map(request, Maintenance.class);
-        maintenance.setId(UUID.randomUUID());
+        maintenance.setId(null);
         maintenance.setCompleted(false);
         maintenance.setStartDate(LocalDate.now());
         repository.save(maintenance);

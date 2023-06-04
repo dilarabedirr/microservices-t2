@@ -1,21 +1,16 @@
 spring:
   application:
-    name: rental-service
+    name: payment-service
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/ms-rentaldb
+    url: jdbc:postgresql://localhost:5432/ms-paymentdb
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-  kafka:
-    producer:
-      bootstrap-servers: http:/localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   cloud:
     openfeign:
       circuitbreaker:
@@ -29,14 +24,5 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
     prefer-ip-address: true
-resilience4j:
-  retry:
-    instances:
-      retry-rental:
-        max-attempts: 5
-        wait-duration: 5s
-      retry-payment:
-        max-attempts: 5
-        wait-duration: 5s
 server:
   port: 0
