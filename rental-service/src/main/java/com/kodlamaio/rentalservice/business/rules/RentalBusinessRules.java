@@ -25,7 +25,7 @@ public class RentalBusinessRules {
 
     public void ensureCarIsAvailable(UUID carId) {
         var response = carClient.checkIfCarAvailable(carId);
-        if (!response.isSuccess()){
+        if (!response.isSuccess()) {
             throw new BusinessException(response.getMessage());
         }
     }
@@ -36,5 +36,4 @@ public class RentalBusinessRules {
             throw new BusinessException(response.getMessage());
         }
     }
-
 }

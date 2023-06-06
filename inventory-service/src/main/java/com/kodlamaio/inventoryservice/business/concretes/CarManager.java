@@ -11,7 +11,7 @@ import com.kodlamaio.inventoryservice.business.dto.requests.create.CreateCarRequ
 import com.kodlamaio.inventoryservice.business.dto.requests.update.UpdateCarRequest;
 import com.kodlamaio.inventoryservice.business.dto.responses.create.CreateCarResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.get.car.GetAllCarsResponse;
-import com.kodlamaio.inventoryservice.business.dto.responses.get.car.GetCarResponse;
+import com.kodlamaio.commonpackage.utils.dto.GetCarResponse;
 import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateCarResponse;
 import com.kodlamaio.inventoryservice.business.rules.CarBusinessRules;
 import com.kodlamaio.inventoryservice.entities.Car;
